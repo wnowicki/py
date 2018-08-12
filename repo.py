@@ -3,6 +3,7 @@
 
 from github import Github
 import base64
+import configuration
 
 
 def get_file_contents(token, repository, file):
@@ -15,7 +16,6 @@ def get_file_contents(token, repository, file):
 
 if __name__ == "__main__":
 
-    with open('github_token', 'r') as content_file:
-        token = content_file.read()
+    conf = configuration.load()
 
-    print(get_file_contents(token, "wnowicki/py", "README.md"))
+    print(get_file_contents(conf["github"]["token"], "wnowicki/py", "README.md"))
