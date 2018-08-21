@@ -27,7 +27,10 @@ class Database:
         names = [d[0] for d in cursor.description]
         return [dict(zip(names, row)) for row in cursor.fetchall()]
 
-    def execute(self, query):
+    def fetchall(self, query):
         cursor = self.get_cursor()
         cursor.execute(query)
         return cursor.fetchall()
+
+    def commit(self):
+        self._db.commit()
