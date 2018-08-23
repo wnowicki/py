@@ -8,5 +8,14 @@
         "passwd": "",
         "port": "",
         "database": ""
+    },
+    "api": {
+        "app1": {
+            "user": "",
+            "password": ""
+        },
+        "app2": {
+            "token": ""
+        }
     }
 }
