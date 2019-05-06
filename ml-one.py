@@ -20,6 +20,7 @@ from sklearn.svm import SVC
 
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset = pandas.read_csv('data/iris.csv', names=names)
+# dataset = pandas.read_csv('data/winequality-red.csv')
 
 # print (dataset)
 
@@ -49,8 +50,8 @@ plt.show()
 
 # Split-out validation dataset
 array = dataset.values
-X = array[:,0:4]
-Y = array[:,4]
+X = array[:, 0:dataset.shape[1]-1]
+Y = array[:, dataset.shape[1]-1]
 validation_size = 0.20
 seed = 7
 X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
