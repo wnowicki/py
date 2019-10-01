@@ -43,4 +43,8 @@ for row in dataset.values:
     print
     result.append(row.tolist())
 
-pandas.DataFrame(result).to_csv(header=False, path_or_buf='output.csv')
+df = pandas.DataFrame(result, columns=names)
+
+print(df.head(20))
+
+df.to_csv(header=False, path_or_buf='output.csv')
